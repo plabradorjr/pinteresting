@@ -1,9 +1,14 @@
 <div class="jumbotron center">
 	<h1>Don't drown in the details.</h1>
 	<h1>Get the right exam hints.</h1>
-	<p>
-		<%= link_to "Log in", "http://fourminutenursing.com", class: "btn btn-default btn-lg" %>
-		<%= link_to "Sign up", "http://fourminutenursing.com", class: "btn btn-primary btn-lg" %>
 
-	<p>
+	<% if user_signed_in? %>
+		<h3>Thanks for signing up! Welcome to the good life.<h3>
+		<% else %>
+		<p>
+		<%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
+		<%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+		<p>
+	<% end %>
+
 <div>
